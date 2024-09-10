@@ -5,7 +5,7 @@ class Biblioteca {
         this.livros.push(livro);
     }
 
-    livroRemovido({ isbn }: { isbn: string; }): boolean {
+    livroRemovido(isbn: string): boolean {
         var index = this.livros.findIndex(livro => livro.isbn === isbn);
         if (index !== -1) {
             this.livros.splice(index, 1);

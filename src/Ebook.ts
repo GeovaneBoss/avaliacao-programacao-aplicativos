@@ -1,12 +1,13 @@
-  
+class Ebook extends Livro {
+    tamanhoArquivo: number;
 
-  class Ebook extends Livro {
-    tamanhoArquivoMB: number;
-    formatoArquivo: string;
+    constructor(isbn: string, titulo: string, autor: string, tamanhoArquivo: number) {
+        super(isbn, titulo, autor);
+        this.tamanhoArquivo = tamanhoArquivo;
+    }
 
-    constructor(isbn: string, titulo: string, autor: string, anoPublicacao: number, tamanhoArquivoMB: number, formatoArquivo: string) {
-        super(isbn, titulo, autor, anoPublicacao);
-        this.tamanhoArquivoMB = tamanhoArquivoMB;
-        this.formatoArquivo = formatoArquivo;
+    exibirDetalhes(): void {
+        super.exibirDetalhes();
+        console.log(`Tamanho do Arquivo: ${this.tamanhoArquivo} MB`);
     }
 }
